@@ -1,23 +1,25 @@
 import java.util.Scanner;
 
-// Dibuat oleh Indra - Main class untuk menjalankan aplikasi
+// Dibuat oleh Indra - Main class untuk menjalankan sistem
 public class Main {
 
-    public static void main(String[] args) { // Dibuat oleh Indra - Membuat objek Scanner untuk input pengguna
+         public static void main(String[] args) { 
 
+        // Dibuat oleh Indra - Membuat objek Scanner untuk input pengguna
         Scanner input = new Scanner(System.in);
 
-// Dibuat oleh Indra - Inisialisasi variabel untuk menyimpan data member, pemesanan, dan pembayaran
+// Dibuat oleh matthew - Inisialisasi variabel untuk menyimpan data member, pemesanan, dan pembayaran
         Member member = null;
         Pemesanan pemesanan = null;
         Pembayaran pembayaran = null;
 
-// Dibuat oleh Indra - Variabel untuk mengontrol jalannya aplikasi
+// Dibuat oleh Indra - Variabel untuk mengontrol jalannya sistem    
         boolean jalan = true;
 
 // Dibuat oleh Indra - Loop utama untuk menampilkan menu dan menangani pilihan pengguna
         while (jalan) {
 
+// Dibuat oleh Indra - Menampilkan menu utama dengan opsi yang tersedia
             System.out.println("\n====================================");
             System.out.println(" SELAMAT DATANG DI FITNESS CITY");
             System.out.println("====================================");
@@ -28,16 +30,20 @@ public class Main {
             System.out.println("5. Pembayaran");
             System.out.println("6. Keluar");
 
+// Dibuat oleh Indra - Meminta input pilihan menu dari pengguna
             System.out.print("\nPilih menu : ");
+
             int menu = input.nextInt();
             input.nextLine();
 
-// dibuat oleh indra - Validasi registrasi member agar hanya bisa dilakukan satu kali
+// dibuat oleh indra - membuat registrasi member agar hanya bisa dilakukan satu kali
     if (menu == 1) {
 
+// dibuat oleh matthew - Validasi registrasi member agar hanya bisa dilakukan satu kali
     if (member != null) {
         System.out.println("\nAnda sudah registrasi.");
         System.out.println("Registrasi hanya dapat dilakukan satu kali.");
+
     } else {
 
         System.out.println("\n===== REGISTRASI MEMBER =====");
@@ -83,9 +89,11 @@ public class Main {
 // dibuat oleh indra - Menambahkan validasi data member dan status pembayaran sebelum membuat pemesanan
             } else if (menu == 3) {
 
+                // dibuat oleh matthew - Validasi data member sebelum membuat pemesanan
                 if (member == null) {
 
                     System.out.println("\nSilakan registrasi terlebih dahulu.");
+
 
                 } else if (pembayaran != null && pembayaran.isStatus()) {
 
@@ -93,6 +101,7 @@ public class Main {
                     System.out.println("Paket aktif : " + pemesanan.getPaket().getNamaPaket());
                     System.out.println("Anda tidak dapat membuat pemesanan baru.");
 
+// dibuat oleh matthew - memilih paket gym
                 } else {
 
                     System.out.println("\n===== MEMILIH PAKET MEMBERSHIP GYM =====");
@@ -115,8 +124,8 @@ public class Main {
 
                     }
 
+                    // dibuat oleh matthew - menyimpan data pemesanan ke menu pembayaran
                     if (paket != null) {
-
                         pemesanan = new Pemesanan(member, paket);
                         pembayaran = new Pembayaran(pemesanan);
 
@@ -129,7 +138,7 @@ public class Main {
                     }
                 }
 
-// dibuat oleh indra - Menambahkan validasi data member sebelum menampilkan informasi
+// dibuat oleh indra - Menambahkan validasi data member sebelum menampilkan informasi member
             } else if (menu == 4) {
 
                 if (member == null) {
@@ -145,6 +154,8 @@ public class Main {
                     System.out.println("Email  : " + member.getEmail());
                     
 
+                    // dibuat oleh matthew - Menampilkan informasi paket yang dipesan jika ada, 
+                    //jika belum melakukan pemesanan maka tampilkan informasi paket kosong
                     if (pemesanan != null) {
 
                         System.out.println("Paket  : "
@@ -156,6 +167,9 @@ public class Main {
 
                     }
 
+                    // dibuat oleh matthew - jika sudah melakukan pembayaran maka status member aktif, 
+                    // jika belum maka status member tidak aktif 
+
                     if (pembayaran != null && pembayaran.isStatus()) {
 
                         System.out.println("Status : Membership Aktif");
@@ -166,7 +180,8 @@ public class Main {
 
                     }
                 }
-// dibuat oleh indra - Menambahkan validasi data member sebelum menampilkan informasi
+
+// dibuat oleh matthew - Menambahkan validasi data member sebelum menampilkan informasi
             } else if (menu == 5) {
 
                 if (member == null) {
