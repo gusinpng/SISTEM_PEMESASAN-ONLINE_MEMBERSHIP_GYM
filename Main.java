@@ -36,7 +36,7 @@ public class Main {
             int menu = input.nextInt();
             input.nextLine();
 
-// dibuat oleh indra - membuat registrasi member agar hanya bisa dilakukan satu kali
+// dibuat oleh matthew - membuat registrasi member agar hanya bisa dilakukan satu kali
     if (menu == 1) {
 
 // dibuat oleh matthew - Validasi registrasi member agar hanya bisa dilakukan satu kali
@@ -71,7 +71,7 @@ public class Main {
         }
     }
 
-// dibuat oleh indra - Menampilkan daftar paket gym menggunakan konsep inheritance dan polymorphism
+// dibuat oleh matthew - Menampilkan daftar paket gym menggunakan konsep inheritance dan polymorphism
             } else if (menu == 2) {
 
                 System.out.println("\n===== DAFTAR PAKET GYM =====");
@@ -86,7 +86,7 @@ public class Main {
                 System.out.println();
                 tahunan.tampilkanInfo();
 
-// dibuat oleh indra - Menambahkan validasi data member dan status pembayaran sebelum membuat pemesanan
+// dibuat oleh mathhew - Menambahkan validasi data member dan status pembayaran sebelum membuat pemesanan
             } else if (menu == 3) {
 
                 // dibuat oleh matthew - Validasi data member sebelum membuat pemesanan
@@ -138,7 +138,7 @@ public class Main {
                     }
                 }
 
-// dibuat oleh indra - Menambahkan validasi data member sebelum menampilkan informasi member
+// dibuat oleh matthew - Menambahkan validasi data member sebelum menampilkan informasi member
             } else if (menu == 4) {
 
                 if (member == null) {
@@ -266,7 +266,7 @@ public class Main {
 
                     }
                 }
-// dibuat oleh indra - Menambahkan opsi keluar dari aplikasi dengan validasi input
+// dibuat oleh indra - Menambahkan opsi keluar dari sistem dengan validasi input
             } else if (menu == 6) {
 
                 jalan = false;
